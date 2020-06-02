@@ -1,0 +1,5 @@
+.clasp.json
+.vs
+appsscript.json
+gapps.config.json
+node_modules
