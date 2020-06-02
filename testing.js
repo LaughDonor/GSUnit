@@ -1,4 +1,3 @@
-
 function add_(x, y){
   return x+y;
 }
@@ -8,10 +7,7 @@ function testNumbers_(){
  GsUnit.assert('Not a number', typeof added == 'number');   
 }
 
-
-
 function testing_(){
-
   var one = 1;
   var two = '1';
   
@@ -20,6 +16,8 @@ function testing_(){
   obj1.num = 4;
   obj2.num = 4;
   
+  var d1 = new Date();
+  var d2 = new Date(+d1);
   
   assertEquals('Fail num != string', one, two);
   assertEquals(1, '1'); //Fail No comments just error   
@@ -38,6 +36,7 @@ function testing_(){
   assertNaN(5);
   assertNotNaN('R');
   assertObjectEquals(obj1, obj2);
+  assertObjectEquals(d1, d2);
   assertArrayEquals([1,2], [2,2]);
   assertEvaluatesToTrue('');
   assertEvaluatesToFalse('test');

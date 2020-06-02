@@ -43,7 +43,12 @@ GsUnit.DOUBLE_EQUALITY_PREDICATE = function(var1, var2) {return var1 == var2;};
 GsUnit.TRIPLE_EQUALITY_PREDICATE = function(var1, var2) {return var1 === var2;};
 
 /**
-* Predicate used for testing whether two obects' toStrings are equal
+* Predicate used for testing whether two objects' valueOf are equal
+*/
+GsUnit.TO_VALUE_EQUALITY_PREDICATE = function(var1, var2) {return var1.valueOf() === var2.valueOf();};
+
+/**
+* Predicate used for testing whether two objects' toStrings are equal
 */
 GsUnit.TO_STRING_EQUALITY_PREDICATE = function(var1, var2) {return var1.toString() === var2.toString();};
 
@@ -54,7 +59,7 @@ GsUnit.PRIMITIVE_EQUALITY_PREDICATES = {
     'String':   GsUnit.DOUBLE_EQUALITY_PREDICATE,
     'Number':   GsUnit.DOUBLE_EQUALITY_PREDICATE,
     'Boolean':  GsUnit.DOUBLE_EQUALITY_PREDICATE,
-    'Date':     GsUnit.TRIPLE_EQUALITY_PREDICATE,
+    'Date':     GsUnit.TO_VALUE_EQUALITY_PREDICATE,
     'RegExp':   GsUnit.TO_STRING_EQUALITY_PREDICATE,
     'Function': GsUnit.TO_STRING_EQUALITY_PREDICATE
 }
